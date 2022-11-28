@@ -18,8 +18,8 @@ public class Main {
 
         worker2.setHourlyRate(10);
 
-        worker1.incrementToSalary();
-        worker2.incrementHoursWorked(50);
+        worker1.incrementHoursWorked(8);
+        worker2.incrementHoursWorked(4);
 
         worker1.getInfo();
         worker2.getInfo();
