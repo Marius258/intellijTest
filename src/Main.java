@@ -14,17 +14,19 @@ public class Main {
         worker1.incrementHoursWorked(20);
         worker1.incrementToSalary();
 
-        worker1.getInfo();
+        worker1.printInfo();
 
         worker2.setHourlyRate(10);
 
         worker1.incrementHoursWorked(8);
         worker2.incrementHoursWorked(5);
 
-        worker1.getInfo();
-        worker2.getInfo();
+        worker1.printInfo();
+        worker2.printInfo();
 
         worker1.compareAge(worker2);
+
+        Worker.printAllPeople();
 
     }
 }

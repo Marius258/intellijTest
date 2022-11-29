@@ -2,13 +2,15 @@ package People;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.LinkedList;
 
 class Person {
-    private String name;
-    private String lastname;
-    private LocalDate dob;
+    private final String name;
+    private final String lastname;
+    private final LocalDate dob;
 
-//    private LocalDate startOfEmployment = LocalDate.now();
+    //    static int totalNumberOfPeople = 0;
+    static LinkedList<Person> peopleList = new LinkedList<>();
 
     protected Person(String name, String lastname, LocalDate dob) {
         this.name = name;
@@ -16,7 +18,7 @@ class Person {
         this.dob = dob;
     }
 
-    public void getInfo()  {
+    public void printInfo() {
         System.out.println(this.name + " " + this.lastname);
     }
 
@@ -36,23 +38,23 @@ class Person {
         }
     }
 
-    public String getName() {
-        return name;
+    public static void printAllPeople() {
+        for (Person person : Person.peopleList) {
+            System.out.println(person.toString());
+        }
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public String getLastname() {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    @Override
+    public String toString() {
+        return "name: " + name + ", lastname: " + lastname;
     }
 
-    public void setDob(LocalDate dob) {
-        this.dob = dob;
-    }
 }

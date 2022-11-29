@@ -12,6 +12,8 @@ public class Worker extends Person {
         this.salary = salary;
         this.hoursWorked = hoursWorked;
         this.hourlyRate = hourlyRate;
+//        Person.totalNumberOfPeople++;
+        Person.peopleList.add(this);
     }
 
     public Worker(String name, String lastname, LocalDate dob) {
@@ -19,13 +21,17 @@ public class Worker extends Person {
         this.salary = 0;
         this.hoursWorked = 0;
         this.hourlyRate = 0;
+//        Person.totalNumberOfPeople++;
+        Person.peopleList.add(this);
     }
 
-    public void getInfo() {
+    public void printInfo() {
         System.out.println(this.getName() + " " + this.getLastname());
         System.out.println("current salary: " + this.salary);
         System.out.println("hourly rate: " + this.hourlyRate);
         System.out.println("hours worked: " + this.hoursWorked);
+//        System.out.println("number of employess: " + Person.totalNumberOfPeople);
+
         System.out.println();
     }
 
@@ -38,7 +44,7 @@ public class Worker extends Person {
     }
 
     public void incrementHoursWorked(int hours) {
-        if(this.hourlyRate > 0){
+        if (this.hourlyRate > 0) {
             this.addToSalary(this.hourlyRate * hours);
             this.addToHoursWorked(hours);
         }
@@ -52,20 +58,8 @@ public class Worker extends Person {
         this.setHoursWorked((this.hoursWorked + hoursToAdd));
     }
 
-    public int getSalary() {
-        return salary;
-    }
-
     public void setSalary(int salary) {
         this.salary = salary;
-    }
-
-    public int getHoursWorked() {
-        return hoursWorked;
-    }
-
-    public int getHourlyRate() {
-        return hourlyRate;
     }
 
     public void setHourlyRate(int hourlyRate) {
