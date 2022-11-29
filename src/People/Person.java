@@ -39,6 +39,7 @@ class Person {
     }
 
     public static void printAllPeople() {
+        System.out.println("total number of people " + Person.peopleList.size());
         for (Person person : Person.peopleList) {
             System.out.println(person.toString());
         }
